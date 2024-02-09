@@ -1,0 +1,106 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background: #23242a;
+}
+
+.box {
+    position: relative;
+    width: 370px;
+    height: 450px;
+    background: #1c1c1c;
+    border-radius: 50px 5px;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 370px;
+    height: 450px;
+    background: linear-gradient(60deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 370px;
+    height: 450px;
+    background: linear-gradient(60deg, transparent, #d9138a, #d9138a);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.container {
+    position: absolute;
+    inset: 2px;
+    border-radius: 50px 5px;
+    background: #28292d;
+    z-index: 10;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    z-index: 11;
+    margin-top: 50px;
+    width: 300px;
+    text-align: center;
+}
+
+.container a:nth-child(1) {
+    background-color: #3475f6;
+    padding: 10px 20px 5px;
+}
+
+.container a:nth-child(2) {
+    background-color: #379ffb;
+    padding: 10px 20px 5px;
+}
+
+.container a:nth-child(3) {
+    background-color: #45f3ff;
+    padding: 10px 20px;
+}
+
+.container a:nth-child(1):hover {
+    background: linear-gradient(90deg, #3475f6, #d9138a);
+}
+
+.container a:nth-child(2):hover {
+    background: linear-gradient(90deg, #379ffb, #d9138a);
+}
+
+.container a:nth-child(3):hover {
+    background: linear-gradient(90deg, #45f3ff, #d9138a);
+}
